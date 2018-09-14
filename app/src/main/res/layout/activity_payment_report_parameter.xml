@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="ibridotechnologies.com.accountsoftware.PaymentReportParameter">
+
+    <TextView
+        android:id="@+id/txtFontParty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="FontAwesome"
+        android:textSize="50sp"
+        app:layout_constraintBottom_toBottomOf="@+id/searchableSpinner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.31" />
+
+    <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+        android:id="@+id/financialYear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/txtFontParty"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/etFromDate"/>
+
+    <EditText
+        android:id="@+id/etFromDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Select From date"
+        android:textSize="25dp"
+        android:layout_margin="16sp"
+        android:focusable="false"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/financialYear"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/etToDate"/>
+
+    <EditText
+        android:id="@+id/etToDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Select To date"
+        android:textSize="25dp"
+        android:layout_margin="16sp"
+        android:focusable="false"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/etFromDate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/btnGetDetails"/>
+
+    <Button
+        android:id="@+id/btnGetDetails"
+        android:layout_width="230sp"
+        android:layout_height="wrap_content"
+        android:text="Next"
+        android:textColor="#FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/etToDate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</android.support.constraint.ConstraintLayout>

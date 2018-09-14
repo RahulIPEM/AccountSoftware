@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/popup_rounded_border"
+    tools:context="ibridotechnologies.com.accountsoftware.AddBook">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:id="@+id/txtFontBook"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="FontAwesome"
+            android:textSize="40dp"
+            android:layout_marginTop="20sp"
+            android:textColor="#FFFFFF"/>
+        <TextView
+            android:id="@+id/txtBookText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add New Book"
+            android:textColor="#FFFFFF"/>
+
+        <EditText
+            android:id="@+id/bookTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Title of the book"
+            android:layout_margin="16sp"
+            android:singleLine="true"/>
+
+        <EditText
+            android:id="@+id/authorName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Book's author name"
+            android:layout_margin="16sp"
+            android:singleLine="true"/>
+
+        <EditText
+            android:id="@+id/isbnNo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Book's ISBN no"
+            android:layout_margin="16sp"
+            android:singleLine="true"/>
+
+        <Button
+            android:id="@+id/btnAddBook"
+            android:layout_width="230sp"
+            android:layout_height="wrap_content"
+            android:text="Add new book"
+            android:textColor="#FFFFFF"/>
+
+        <Button
+            android:id="@+id/btnGoToUpdate"
+            android:layout_width="230sp"
+            android:layout_height="wrap_content"
+            android:text="Modify book"
+            android:layout_marginTop="20sp"
+            android:textColor="#FFFFFF"/>
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

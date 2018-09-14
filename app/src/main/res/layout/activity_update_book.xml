@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="ibridotechnologies.com.accountsoftware.UpdateBook">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/txtFontBook"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="FontAwesome"
+            android:textSize="40dp" />
+
+        <TextView
+            android:id="@+id/txtBookText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Update Book"/>
+
+        <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+            android:id="@+id/spinnerBook"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16sp"/>
+
+        <EditText
+            android:id="@+id/bookTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Title of the book"
+            android:layout_margin="16sp"
+            android:singleLine="true"/>
+
+        <EditText
+            android:id="@+id/authorName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Book's author name"
+            android:layout_margin="16sp"
+            android:singleLine="true"/>
+
+        <EditText
+            android:id="@+id/isbnNo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Book's ISBN no"
+            android:layout_margin="16sp"
+            android:singleLine="true"/>
+
+        <Button
+            android:id="@+id/btnUpdate"
+            android:layout_width="230sp"
+            android:layout_height="wrap_content"
+            android:text="Update book"
+            android:textColor="#FFFFFF"/>
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

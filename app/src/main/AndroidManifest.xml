@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="ibridotechnologies.com.accountsoftware">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <provider
+            android:name=".GenericFileProvider"
+            android:authorities="ibridotechnologies.com.accountsoftware.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".OptionsActivity" />
+        <activity android:name=".BookName" />
+        <activity android:name=".Pages" />
+        <activity android:name=".Payment" />
+        <activity android:name=".CashReceived" />
+        <activity android:name=".ChequeReceived" />
+        <activity android:name=".EditDetails" />
+        <activity android:name=".EditPages" />
+        <activity android:name=".EditArtWork" />
+        <activity android:name=".EditColoring" />
+        <activity android:name=".EditWriting" />
+        <activity android:name=".EditPayment" />
+        <activity android:name=".EditCashReceived" />
+        <activity android:name=".EditChequeReceived" />
+        <activity android:name=".ArtWork" />
+        <activity android:name=".Coloring" />
+        <activity android:name=".Writing" />
+        <activity
+            android:name=".AddBook"
+            android:theme="@style/AppTheme.CustomTheme" />
+        <activity android:name=".PartyName" />
+        <activity android:name=".Order" />
+        <activity android:name=".EditOrder" />
+        <activity
+            android:name=".PopupAddParty"
+            android:theme="@style/AppTheme.CustomTheme" />
+        <activity android:name=".Proofing" />
+        <activity android:name=".AddParty" />
+        <activity android:name=".SelectBook" />
+        <activity android:name=".OrderGrid" />
+        <activity android:name=".Confirmation" />
+        <activity android:name=".EditProofing" />
+        <activity android:name=".LedgerDetails" />
+        <activity android:name=".Bills" />
+        <activity android:name=".PaymentGrid" />
+        <activity android:name=".PartyOptions" />
+        <activity android:name=".LedgerOptions" />
+        <activity android:name=".GetBook" />
+        <activity android:name=".AllBookBillDateWiseReport" />
+        <activity android:name=".EditParty" />
+        <activity android:name=".UpdateParty" />
+        <activity android:name=".UpdateBook" />
+        <activity android:name=".BookReportParameter" />
+        <activity android:name=".AllPaymentDateWiseReport" />
+        <activity android:name=".PaymentReportParameter" />
+        <activity android:name=".BalanceReportParameter" />
+        <activity android:name=".BalanceDateWiseReport"></activity>
+    </application>
+
+</manifest>
