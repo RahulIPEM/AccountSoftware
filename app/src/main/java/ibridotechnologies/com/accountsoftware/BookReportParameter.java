@@ -3,6 +3,7 @@ package ibridotechnologies.com.accountsoftware;
 import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -12,6 +13,7 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -25,6 +27,7 @@ public class BookReportParameter extends AppCompatActivity {
     EditText etFromDate,etToDate;
     Spinner spinnerFinancialYear;
     ProgressDialog progressDialog;
+    TextView txtFontParty;
     Button btnGetDetails;
     String JsonURL = "http://www.acmecreations.co.in/api/AcmeQuotation/GetPartyList";
 
@@ -35,6 +38,12 @@ public class BookReportParameter extends AppCompatActivity {
 
         spinnerFinancialYear = (Spinner)findViewById(R.id.financialYear);
         spinnerFinancialYear.setBackgroundResource(R.drawable.spinner_rounded_border);
+
+        //setting icon
+        Typeface font = Typeface.createFromAsset(getAssets(),"fonts/fontawesome-webfont.ttf");
+        txtFontParty = (TextView)findViewById(R.id.txtFontColoring);
+        txtFontParty.setTypeface(font);
+        txtFontParty.setText("\uf02d");
 
         ArrayList<String> years = new ArrayList<String>();
         int thisYear = Calendar.getInstance().get(Calendar.YEAR);

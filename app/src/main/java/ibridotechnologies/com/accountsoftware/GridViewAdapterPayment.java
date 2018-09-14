@@ -100,9 +100,9 @@ public class GridViewAdapterPayment extends BaseAdapter {
         String date = dateData[0];
 
         final TextView txtBookTitle = new TextView(context);
-        txtBookTitle.setText(_payment.get(i));
+        txtBookTitle.setText(_payment.get(i)+" at "+date); //Date added to payment
         txtBookTitle.setGravity(START);
-        txtBookTitle.setWidth(500);
+        txtBookTitle.setWidth(600);
         txtBookTitle.setPaintFlags(txtBookTitle.getPaintFlags()| Paint.UNDERLINE_TEXT_FLAG);
         txtBookTitle.setPadding(30,30,30,30);
         txtBookTitle.setTypeface(txtBookTitle.getTypeface(), Typeface.BOLD);
@@ -117,7 +117,7 @@ public class GridViewAdapterPayment extends BaseAdapter {
         final Button btnCategory = new Button(context);
         btnCategory.setTypeface(font);
         btnCategory.setText("\uf040");
-        btnCategory.setGravity(CENTER);
+        btnCategory.setGravity(END);
         btnCategory.setPadding(0,25,0,25);
         btnCategory.setBackgroundResource(R.drawable.button_rounded_border);
         btnCategory.setBackgroundColor(Color.parseColor("#00000000"));
@@ -193,7 +193,7 @@ public class GridViewAdapterPayment extends BaseAdapter {
         li.addView(txtSno);
         li.addView(txtBookTitle);
         li.addView(btnCategory);
-        li.addView(btnDelete);
+        //li.addView(btnDelete);
 
         return li;
     }

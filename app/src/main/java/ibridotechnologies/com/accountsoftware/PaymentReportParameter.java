@@ -3,6 +3,7 @@ package ibridotechnologies.com.accountsoftware;
 import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -12,6 +13,7 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -25,6 +27,7 @@ public class PaymentReportParameter extends AppCompatActivity {
 
     EditText etFromDate,etToDate;
     Spinner spinnerFinancialYear;
+    TextView txtFontParty;
     ProgressDialog progressDialog;
     Button btnGetDetails;
     String JsonURL = "http://www.acmecreations.co.in/api/AcmeQuotation/GetPartyList";
@@ -33,6 +36,12 @@ public class PaymentReportParameter extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_payment_report_parameter);
+
+        //setting icon
+        Typeface font = Typeface.createFromAsset(getAssets(),"fonts/fontawesome-webfont.ttf");
+        txtFontParty = (TextView)findViewById(R.id.txtFontColoring);
+        txtFontParty.setTypeface(font);
+        txtFontParty.setText("\uf156");
 
         spinnerFinancialYear = (Spinner)findViewById(R.id.financialYear);
         spinnerFinancialYear.setBackgroundResource(R.drawable.spinner_rounded_border);
