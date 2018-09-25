@@ -76,7 +76,8 @@
         <activity android:name=".AllPaymentDateWiseReport" />
         <activity android:name=".PaymentReportParameter" />
         <activity android:name=".BalanceReportParameter" />
-        <activity android:name=".BalanceDateWiseReport"></activity>
+        <activity android:name=".BalanceDateWiseReport" />
+        <activity android:name=".AboutUs"></activity>
     </application>
 
 </manifest>

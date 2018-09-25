@@ -1,11 +1,16 @@
 package ibridotechnologies.com.accountsoftware;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -13,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     EditText editText1,editText2,editText3,editText4;
     private int previousLength;
     private boolean backSpace;
+    ImageView imgView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -138,5 +144,23 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
+        imgView = (ImageView)findViewById(R.id.imglogosrs);
+        imgView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goToSRS();
+            }
+        });
+    }
+
+    public void goToSRS () {
+        goToUrl ( "http://www.srstechsolution.com/");
+    }
+
+    private void goToUrl (String url) {
+        Uri uriUrl = Uri.parse(url);
+        Intent launchBrowser = new Intent(Intent.ACTION_VIEW, uriUrl);
+        startActivity(launchBrowser);
     }
 }

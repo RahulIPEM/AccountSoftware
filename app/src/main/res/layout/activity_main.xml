@@ -63,4 +63,15 @@
         app:layout_constraintBottom_toBottomOf="parent"
         android:paddingTop="10sp"/>
 
+    <ImageView
+        android:id="@+id/imglogosrs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/srslogotr"
+        android:background="@drawable/edit_text_rounded_border"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="20sp"/>
+
 </android.support.constraint.ConstraintLayout>

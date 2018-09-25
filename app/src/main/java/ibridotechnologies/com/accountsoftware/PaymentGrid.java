@@ -6,6 +6,8 @@ import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.GridView;
 
 import ibridotechnologies.com.accountsoftware.Model.EditOrderParams;
@@ -45,5 +47,30 @@ public class PaymentGrid extends AppCompatActivity {
         String getOrderURL = JsonURLGetPayment+financial_year+"/"+party_id;
         Log.d("Order URL :",getOrderURL);
         new JSONDownloaderGV(PaymentGrid.this,getOrderURL,gridView,progressDialog,font).execute();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.navigation,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        switch (id){
+            case R.id.navigation_home:
+                startActivity(new Intent(this,OptionsActivity.class));
+                break;
+            case R.id.navigation_about:
+                startActivity(new Intent(this,AboutUs.class));
+                break;
+            case R.id.navigation_exit:
+                finishAffinity();
+                System.exit(0);
+        }
+
+        return true;
     }
 }

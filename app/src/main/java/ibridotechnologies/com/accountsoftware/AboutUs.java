@@ -1,44 +1,40 @@
 package ibridotechnologies.com.accountsoftware;
 
 import android.content.Intent;
+import android.net.Uri;
+import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
-import android.widget.Spinner;
 
-import ibridotechnologies.com.accountsoftware.Model.Ledger;
+public class AboutUs extends AppCompatActivity {
 
-public class GetBook extends AppCompatActivity {
-
-    Spinner spBookName;
-    String JsonBooks = "http://www.acmecreations.co.in/api/AccountManagement/GetBookDetails";
-    Button btnGetDetails;
+    ConstraintLayout cl;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_get_book);
+        setContentView(R.layout.activity_about_us);
 
-        spBookName = (Spinner)findViewById(R.id.spBookName);
-        spBookName.setBackgroundResource(R.drawable.spinner_rounded_border);
-        new ibridotechnologies.com.accountsoftware.getJson.getBooks.JSONDownloaderSP(GetBook.this,JsonBooks,spBookName).execute();
-
-        btnGetDetails = (Button)findViewById(R.id.btnGetDetails);
-        btnGetDetails.setBackgroundResource(R.drawable.button_rounded_border);
-        btnGetDetails.setOnClickListener(new View.OnClickListener() {
+        cl = (ConstraintLayout)findViewById(R.id.layoutAboutUs);
+        cl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Params params = new Params();
-
-                Ledger ledger = new Ledger();
-                ledger.setBookId(String.valueOf(params.getBookId()));
-
-                startActivity(new Intent(GetBook.this,Bills.class));
+                goToSRS();
             }
         });
+    }
+
+    public void goToSRS () {
+        goToUrl ( "http://www.srstechsolution.com/");
+    }
+
+    private void goToUrl (String url) {
+        Uri uriUrl = Uri.parse(url);
+        Intent launchBrowser = new Intent(Intent.ACTION_VIEW, uriUrl);
+        startActivity(launchBrowser);
     }
 
     @Override

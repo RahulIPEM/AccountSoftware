@@ -6,6 +6,8 @@ import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -103,5 +105,30 @@ public class PartyName extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.navigation,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        switch (id){
+            case R.id.navigation_home:
+                startActivity(new Intent(PartyName.this,OptionsActivity.class));
+                break;
+            case R.id.navigation_about:
+                startActivity(new Intent(PartyName.this,AboutUs.class));
+                break;
+            case R.id.navigation_exit:
+                finishAffinity();
+                System.exit(0);
+        }
+
+        return true;
     }
 }

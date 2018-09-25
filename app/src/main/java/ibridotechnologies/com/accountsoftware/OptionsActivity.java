@@ -5,6 +5,8 @@ import android.graphics.Typeface;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -98,5 +100,31 @@ public class OptionsActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.navigation,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        switch (id){
+            case R.id.navigation_home:
+                Toast.makeText(OptionsActivity.this,"You already at home.",Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.navigation_about:
+                startActivity(new Intent(OptionsActivity.this,AboutUs.class));
+                break;
+            case R.id.navigation_exit:
+                finishAffinity();
+                System.exit(0);
+        }
+
+        return true;
     }
 }

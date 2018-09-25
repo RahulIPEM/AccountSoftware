@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
@@ -45,5 +47,30 @@ public class PartyOptions extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.navigation,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        switch (id){
+            case R.id.navigation_home:
+                startActivity(new Intent(this,OptionsActivity.class));
+                break;
+            case R.id.navigation_about:
+                startActivity(new Intent(this,AboutUs.class));
+                break;
+            case R.id.navigation_exit:
+                finishAffinity();
+                System.exit(0);
+        }
+
+        return true;
     }
 }
