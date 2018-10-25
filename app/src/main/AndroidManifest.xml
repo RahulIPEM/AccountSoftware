@@ -47,9 +47,7 @@
         <activity android:name=".ArtWork" />
         <activity android:name=".Coloring" />
         <activity android:name=".Writing" />
-        <activity
-            android:name=".AddBook"
-            android:theme="@style/AppTheme.CustomTheme" />
+        <activity android:name=".AddBook" />
         <activity android:name=".PartyName" />
         <activity android:name=".Order" />
         <activity android:name=".EditOrder" />
@@ -77,7 +75,10 @@
         <activity android:name=".PaymentReportParameter" />
         <activity android:name=".BalanceReportParameter" />
         <activity android:name=".BalanceDateWiseReport" />
-        <activity android:name=".AboutUs"></activity>
+        <activity android:name=".AboutUs" />
+        <activity
+            android:name=".AddBookPopUp"
+            android:theme="@style/AppTheme.CustomTheme"/>
     </application>
 
 </manifest>

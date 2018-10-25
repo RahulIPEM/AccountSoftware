@@ -17,14 +17,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
-import com.android.volley.NetworkResponse;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.VolleyLog;
-import com.android.volley.toolbox.HttpHeaderParser;
-import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
@@ -32,11 +29,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.UnsupportedEncodingException;
-import java.lang.reflect.Method;
-import java.util.HashMap;
-import java.util.Map;
 
-public class AddBook extends AppCompatActivity {
+public class AddBookPopUp extends AppCompatActivity {
 
     EditText editText1,editText2,editText3;
     Button btnAdd,btnUpdate;
@@ -48,7 +42,15 @@ public class AddBook extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_book);
+        setContentView(R.layout.activity_add_book_pop_up);
+        DisplayMetrics dm = new DisplayMetrics();
+
+        getWindowManager().getDefaultDisplay().getMetrics(dm);
+
+        int width = dm.widthPixels;
+        int height = dm.heightPixels;
+
+        getWindow().setLayout((int) (width*.8), (int) (height*.7));
 
         Typeface font = Typeface.createFromAsset(getAssets(),"fonts/fontawesome-webfont.ttf");
         txtFontBook = (TextView)findViewById(R.id.txtFontBook);
@@ -65,7 +67,7 @@ public class AddBook extends AppCompatActivity {
 
         btnAdd = (Button)findViewById(R.id.btnAddBook);
         btnAdd.setBackgroundResource(R.drawable.button_rounded_border);
-        builder = new AlertDialog.Builder(AddBook.this);
+        builder = new AlertDialog.Builder(AddBookPopUp.this);
 
         btnAdd.setBackgroundResource(R.drawable.button_rounded_border);
         btnAdd.setOnClickListener(new View.OnClickListener() {
@@ -76,7 +78,7 @@ public class AddBook extends AppCompatActivity {
                     addNewBookWithCheck(editText1.getText().toString(), editText2.getText().toString(), editText3.getText().toString());
                 }
                 else{
-                    Toast.makeText(AddBook.this,"Please fill up above fields.",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AddBookPopUp.this,"Please fill up above fields.",Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -88,7 +90,7 @@ public class AddBook extends AppCompatActivity {
         btnUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(AddBook.this,UpdateBook.class));
+                startActivity(new Intent(AddBookPopUp.this,UpdateBook.class));
             }
         });
     }
@@ -119,7 +121,7 @@ public class AddBook extends AppCompatActivity {
                                 editText1.setText("");
                                 editText2.setText("");
                                 editText3.setText("");
-                                startActivity(new Intent(AddBook.this,OptionsActivity.class));
+                                startActivity(new Intent(AddBookPopUp.this,OptionsActivity.class));
                             }
                         });
                         AlertDialog alertDialog = builder.create();
@@ -131,7 +133,7 @@ public class AddBook extends AppCompatActivity {
                         builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
-                                startActivity(new Intent(AddBook.this,OptionsActivity.class));
+                                startActivity(new Intent(AddBookPopUp.this,OptionsActivity.class));
                             }
                         });
                         AlertDialog alertDialog = builder.create();
@@ -143,7 +145,7 @@ public class AddBook extends AppCompatActivity {
                         builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
-                                startActivity(new Intent(AddBook.this,OptionsActivity.class));
+                                startActivity(new Intent(AddBookPopUp.this,OptionsActivity.class));
                             }
                         });
                         AlertDialog alertDialog = builder.create();
@@ -155,7 +157,7 @@ public class AddBook extends AppCompatActivity {
                         builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
-                                startActivity(new Intent(AddBook.this,OptionsActivity.class));
+                                startActivity(new Intent(AddBookPopUp.this,OptionsActivity.class));
                             }
                         });
                         AlertDialog alertDialog = builder.create();

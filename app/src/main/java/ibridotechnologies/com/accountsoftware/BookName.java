@@ -69,7 +69,7 @@ public class BookName extends AppCompatActivity {
         btnAddBooks.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(BookName.this,AddBook.class));
+                startActivity(new Intent(BookName.this,AddBookPopUp.class));
             }
         });
 

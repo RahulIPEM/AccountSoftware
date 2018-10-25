@@ -13,7 +13,7 @@ import android.widget.Toast;
 
 public class OptionsActivity extends AppCompatActivity {
 
-    Button btn1,btn2,btn3,btn4,btn5,btn6;
+    Button btn1,btn2,btn3,btn4,btn5,btn6,btn7;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +26,7 @@ public class OptionsActivity extends AppCompatActivity {
         btn4=(Button)findViewById(R.id.btn4);
         btn5=(Button)findViewById(R.id.btn5);
         btn6=(Button)findViewById(R.id.btn6);
+        btn7=(Button)findViewById(R.id.btn7);
 
         Typeface font = Typeface.createFromAsset(getAssets(),"fonts/fontawesome-webfont.ttf");
 
@@ -47,12 +48,16 @@ public class OptionsActivity extends AppCompatActivity {
         btn6.setTypeface(font);
         btn6.setText("\uf234 Add New Party");
 
+        btn7.setTypeface(font);
+        btn7.setText("\uf02d Add New Book");
+
         btn1.setBackgroundResource(R.drawable.button_rounded_border);
         btn2.setBackgroundResource(R.drawable.button_rounded_border);
         btn3.setBackgroundResource(R.drawable.button_rounded_border);
         btn4.setBackgroundResource(R.drawable.button_rounded_border);
         btn5.setBackgroundResource(R.drawable.button_rounded_border);
         btn6.setBackgroundResource(R.drawable.button_rounded_border);
+        btn7.setBackgroundResource(R.drawable.button_rounded_border);
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -98,6 +103,13 @@ public class OptionsActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(OptionsActivity.this,PartyOptions.class);
                 startActivity(intent);
+            }
+        });
+
+        btn7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(OptionsActivity.this,AddBook.class));
             }
         });
     }
