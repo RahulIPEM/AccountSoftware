@@ -97,7 +97,7 @@ public class AddParty extends AppCompatActivity {
                 String partyEmail = txtPartyEmail.getText().toString();
                 String partyTelephone = txtPartyTelephone.getText().toString();
 
-                if(!partyName.isEmpty() && !partyAddress.isEmpty() && !partyMobile.isEmpty() && !partyEmail.isEmpty() && !partyTelephone.isEmpty() && Integer.parseInt(stateId) > 0 && Integer.parseInt(districtId) > 0) {
+                if(!partyName.isEmpty() && !partyAddress.isEmpty()) {
                     addNewPartyWithCheck(partyName, partyAddress, stateId, districtId, partyMobile, partyEmail, partyTelephone);
                 }
                 else {
